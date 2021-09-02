@@ -12,3 +12,12 @@ public void SaveLevel(int level) {
   PlayerPref.Save();
   Debug.Log("レベルを保存しました！");
 }
+
+/*
+アクセス修飾子
+public どこからでもアクセス可能
+protected そのクラスおよび継承したクラスからアクセス可能
+private そのクラスの中からのみアクセス可能
+
+※アクセス修飾子をつけない場合はprivateになる
+*/
