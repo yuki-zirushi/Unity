@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
   private Transform _transform; //Transformのキャッシュ
   private Vector3 _moveVelocity; //キャラクターの移動速度情報
 
-  private bool isGrounded
+  private bool IsGrounded
   {
     get
     {
