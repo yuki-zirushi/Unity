@@ -4,6 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+  [SerializeField] private Animator animator;
   [SerializeField] private float moveSpeed = 3; //移動速度
   [SerializeField] private float jumpPower = 3; //ジャンプ力
   private CharacterController _characterController;
@@ -59,5 +60,8 @@ public class PlayerController : MonoBehaviour
 
     //オブジェクトを動かす
     _characterController.Move(_moveVelocity * Time.deltaTime);
+
+    //移動スピードをanimatorに反映
+    animator.SetFloat("MoveSpeed", new Vector3(_moveVelocity.x, 0, _moveVelocity.z).magnitude);
   }
 }
