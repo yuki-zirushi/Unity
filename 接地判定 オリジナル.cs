@@ -23,6 +23,14 @@ public class PlayerController : MonoBehaviour
     }
   }
 
+  private void Start()
+  {
+    _characterController = GetComponent<CharacterController>();
+    //毎フレームアクセスするので、負荷を下げるためにキャッシュしておく
+    _transform = transform;
+    //transformもキャッシュしておくと少しだけ負荷が下がる
+  }
+
   private void Update()
   {
     Debug.Log(IsGrounded ? "地上にいます" : "空中です");
