@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
   {
     Debug.Log(IsGrounded ? "地上にいます" : "空中です");
 
+    _moveVelocity.x = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
+    _moveVelocity.z = CrossPlatformInputManager.GetAxis("Vertical") * moveSpeed;
+
     //移動方向に向く
     _transform.LookAt(_transform.position + new Vector3(_moveVelocity.x, 0, _moveVelocity.z));
 
