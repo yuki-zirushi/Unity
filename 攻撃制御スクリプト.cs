@@ -33,7 +33,7 @@ public class MobAttack : MonoBehaviour
   //攻撃の開始時に呼ばれる
   public void OnAttackStart()
   {
-    attackCollider.enabled == true;
+    attackCollider.enabled = true;
   }
 
   //attackColliderが攻撃対象にHitした時に呼ばれる
