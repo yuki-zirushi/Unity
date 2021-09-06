@@ -8,7 +8,7 @@ public class CollisionDetector : MonoBehaviour
   [SerializeField] private TriggerEvent onTriggerStay = new TriggerEvent();
 
   // Is TriggerがONで他のColliderと重なっているときは、このメソッドが常にコールされる
-  /private void OnTriggerStay(Collider other)
+  private void OnTriggerStay(Collider other)
   {
     //onTriggerStayで指定された処理を実行する
     onTriggerStay.Invoke(other);
