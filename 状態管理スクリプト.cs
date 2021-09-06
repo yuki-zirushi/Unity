@@ -15,7 +15,7 @@ public abstract class MobStatus : MonoBehaviour
   public bool IsMovable => StateEnum.Normal == _state;
 
   //攻撃可能かどうか
-  public bool InAttackable => StateEnum.Normal == _state;
+  public bool IsAttackable => StateEnum.Normal == _state;
 
   //ライフ最大値を返す
   public float LifeMax => lifeMax;
