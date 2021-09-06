@@ -20,7 +20,7 @@ public class EnemyMove : MonoBehaviour
   //}
 
   //CollisionDetectorのonTriggerStayにセットし、衝突判定を受け取るメソッド
-  public void OnDetectorObject(Collider collider)
+  public void OnDetectObject(Collider collider)
   {
     //検知したオブジェクトに「Player」のタグがついていれば、そのオブジェクトを追いかける
     if (collider.CompareTag("Player"))
