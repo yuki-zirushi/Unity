@@ -12,7 +12,7 @@ public class GameOverTextAnimator : MonoBehaviour
     //一旦上の方に移動させる
     transformCache.localPosition = new Vector3(0, 300f);
     //移動アニメーションを開始
-    transformCache.DOLocalMove(defaultPosition, 1f).SetEase(Ease.Liner).OnComplete(() =>
+    transformCache.DOLocalMove(defaultPosition, 1f).SetEase(Ease.Linear).OnComplete(() =>
       {
         Debug.Log("GAME OVER!!");
         //シェイクアニメーション
