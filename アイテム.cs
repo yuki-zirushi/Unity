@@ -22,7 +22,7 @@ public class Item : MonoBehaviour
     colliderCache.enabled = false;
     //出現アニメーション
     var transformCache = transform;
-    var dropPosition = transform.localPosition + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(=1f, 1f));
+    var dropPosition = transform.localPosition + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
     transformCache.DOLocalMove(dropPosition, 0.5f);
     var defaultScale = transformCache.localScale;
     transformCache.localScale = Vector3.zero;
