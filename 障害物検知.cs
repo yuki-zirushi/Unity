@@ -4,6 +4,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyMove : MonoBehaviour
 {
+  [SerializeField] private LayerMask raycastLayerMask; //レイヤーマスク
+
   //[SerializeField] private PlayerController playerController;
   private NavMeshAgent _agent;
 
@@ -33,7 +35,7 @@ public class EnemyMove : MonoBehaviour
       var direction = positionDiff.normalized;
 
       //_raycastHitsに、ヒットしたColliderや座標情報などが格納される
-      var hitCount = Physics.RaycastNonAlloc(transform.position, direction, _raycastHits, distance);
+      var hitCount = Physics.RaycastNonAlloc(transform.position, direction, _raycastHits, distance, raycastLayerMask);
       Debug.Log("hitCount: " + hitCount);
       if (hitCount == 0)
       {
