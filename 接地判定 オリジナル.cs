@@ -3,7 +3,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerStatus))]
-[RequierComponent(typeof(MobAttack))]
+[RequireComponent(typeof(MobAttack))]
 public class PlayerController : MonoBehaviour
 {
   [SerializeField] private Animator animator;
