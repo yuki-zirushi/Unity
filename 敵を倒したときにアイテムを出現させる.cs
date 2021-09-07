@@ -37,7 +37,7 @@ public class MobItemDropper : MonoBehaviour
     for (var i = 0; i < number; i++)
     {
       var item = Instantiate(itemPrefab, transform.position, Quaternion.identity);
-      item.Initailize();
+      item.Initialize();
     }
   }
 }
