@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(PlayerStatus))]
+[RequierComponent(typeof(MobAttack))]
 public class PlayerController : MonoBehaviour
 {
   [SerializeField] private Animator animator;
@@ -12,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
   private Transform _transform; //Transformのキャッシュ
   private Vector3 _moveVelocity; //キャラクターの移動速度情報
+  private PlayerStatus _status;
+  private MobAttack _attack;
 
   private bool IsGrounded
   {
@@ -30,17 +34,31 @@ public class PlayerController : MonoBehaviour
     //毎フレームアクセスするので、負荷を下げるためにキャッシュしておく
     _transform = transform;
     //transformもキャッシュしておくと少しだけ負荷が下がる
+    _status = GetComponent<PlayerStatus>();
+    _attack = GetComponent<MobAttack>();
   }
 
   private void Update()
   {
     Debug.Log(IsGrounded ? "地上にいます" : "空中です");
 
-    _moveVelocity.x = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
-    _moveVelocity.z = CrossPlatformInputManager.GetAxis("Vertical") * moveSpeed;
+    if (CrossPlatformInputManager.GetButtonDown("Fire1"))
+    {
+      //Fire1ボタン(デフォルトだとマウス左クリック)で攻撃
+      _attack.AttackIfPossible();
+    }
 
-    //移動方向に向く
-    _transform.LookAt(_transform.position + new Vector3(_moveVelocity.x, 0, _moveVelocity.z));
+    if (_status.IsMovable)
+    {
+      _moveVelocity.x = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
+      _moveVelocity.z = CrossPlatformInputManager.GetAxis("Vertical") * moveSpeed;
+      _transform.LookAt(_transform.position + new Vector3(_moveVelocity.x, 0, _moveVelocity.z));
+    }
+    else
+    {
+      _moveVelocity.x = 0;
+      _moveVelocity.z = 0;
+    }
 
     if (IsGrounded)
     {
