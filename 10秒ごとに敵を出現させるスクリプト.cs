@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Spawner : MonoBehaviour
 {
-  [SerializeField] private PlayerStatus PlayerStatus;
+  [SerializeField] private PlayerStatus playerStatus;
   [SerializeField] private GameObject enemyPrefab;
 
   private void Start()
