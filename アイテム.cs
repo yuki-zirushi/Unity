@@ -37,7 +37,14 @@ public class Item : MonoBehaviour
   {
     if (!other.CompareTag("Player")) return;
 
-    //TODO プレイヤーの所持品として追加
+    //プレイヤーの所持品として追加
+    OwnedItemsData.Instance.Add(type);
+    OwnedItemsData.Instance.Save();
+    //所持アイテムのログ出力
+    foreach (var item in OwnedItemsData.Instance.OwnedItems)
+    {
+      Debug.Log(item.Type + "を" + item.Number + "個所持");
+    }
 
     //オブジェクトの破棄
     Destroy(gameObject);
