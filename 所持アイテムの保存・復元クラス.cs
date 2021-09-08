@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class OwnedItemData
+public class OwnedItemsData
 {
   //PlayerPrefs保存先キー
   private const string PlayerPrefsKey = "OWNED_ITEMS_DATA";
