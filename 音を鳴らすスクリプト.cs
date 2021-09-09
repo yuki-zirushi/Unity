@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
     foreach (var clip in audioClips)
     {
       //Audio ClipをDictionaryに保持しておく
-      _clips.Add(clip.name, clip)
+      _clips.Add(clip.name, clip);
     }
   }
 
