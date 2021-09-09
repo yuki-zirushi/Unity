@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequierComponent(typeof(RectTransform))]
+[RequireComponent(typeof(RectTransform))]
 public class LifeGaugeContainer : MonoBehaviour
 {
   public static LifeGaugeContainer Instance
