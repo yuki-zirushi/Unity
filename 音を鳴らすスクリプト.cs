@@ -38,10 +38,10 @@ public class AudioManager : MonoBehaviour
 
   public void Play(string clipName)
   {
-    if (!_clips.ContainKey(clipName))
+    if (!_clips.ContainsKey(clipName))
     {
-      保持しない名前を指定したらエラー
-      throw new Excpetion("Sound" + clipName + "is not defined");
+      //保持しない名前を指定したらエラー
+      throw new Exception("Sound" + clipName + "is not defined");
     }
 
     //指定の名前のclipに差し替えて再生
