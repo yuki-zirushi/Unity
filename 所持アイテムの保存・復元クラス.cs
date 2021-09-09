@@ -83,7 +83,7 @@ public class OwnedItemsData
     //アイテムの種類を返す
     public Item.ItemType Type
     {
-      get { retrun type; }
+      get { return type; }
     }
 
     public int Number
