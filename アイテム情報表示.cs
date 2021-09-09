@@ -14,7 +14,7 @@ public class ItemButton : MonoBehaviour
       _ownedItem = value;
 
       //アイテムが割り振られたかどうかでアイテム画像や所持個数の表示を切り替える
-      var inEmpty = null == _ownedItem;
+      var isEmpty = null == _ownedItem;
       image.gameObject.SetActive(!isEmpty);
       number.gameObject.SetActive(!isEmpty);
       _button.interactable = !isEmpty;
