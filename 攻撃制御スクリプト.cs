@@ -7,6 +7,7 @@ public class MobAttack : MonoBehaviour
 {
   [SerializeField] private float attackCooldown = 0.5f; //攻撃のクールダウン
   [SerializeField] private Collider attackCollider;
+  [SerializeField] private AudioSource swingSound; //武器を振る音
 
   private MobStatus _status;
 
@@ -34,6 +35,13 @@ public class MobAttack : MonoBehaviour
   public void OnAttackStart()
   {
     attackCollider.enabled = true;
+
+    if (swingSound != null)
+    {
+      //武器を振る音の再生。pitch(再生速度)をランダムに変化させ、毎回少し違った音が出るようにしている
+      swingSound.pitch = Random.Range(0.7f, 1.3f);
+      swingSound.Play();
+    }
   }
 
   //attackColliderが攻撃対象にHitした時に呼ばれる
