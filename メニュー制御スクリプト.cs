@@ -21,6 +21,13 @@ public class Menu : MonoBehaviour
   }
 
   //ゲームを一時停止する
+  private void Pause()
+  {
+    Time.timeScale = 0; //0だと時間が停止する
+    pausePanel.SetActive(true);
+  }
+
+  //ゲームを再開する
   private void Resume()
   {
     Time.timeScale = 1; //また時間が流れるようにする
