@@ -14,7 +14,7 @@ public class LifeGaugeContainer : MonoBehaviour
 
   [SerializeField] private Camera mainCamera;
   //ライフゲージ表示対象のMobを映しているカメラ
-  [SerializeField] private LifeGauge lifGaugePrefab; //ライフゲージのPrefab
+  [SerializeField] private LifeGauge lifeGaugePrefab; //ライフゲージのPrefab
 
   private RectTransform rectTransform;
   //アクティブなライフゲージを保持するコンテナ
