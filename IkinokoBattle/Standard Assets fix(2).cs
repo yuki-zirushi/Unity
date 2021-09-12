@@ -1,3 +1,5 @@
+SimpleActivatorMenu.cs
+
 using System;
 using UnityEngine;
 using UnityEngine.UI; //この行を追加
